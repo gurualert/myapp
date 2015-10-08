@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>BracketMatcher</title>
+	
+</head>
+<body>
+
+
+</body>
+<script type="text/javascript">
+
+function countOcuurance(str, char) {
+    var letters = [];
+    for(x = 0, length = str.length; x < length; x++) {
+	    var l = str.charAt(x);
+	    if(l==char) {
+               letters.push(l);
+	    }
+    }
+    //console.log(letters.length);
+    return letters.length;
+}
+
+function BracketMatcher(str) { 
+    if( countOcuurance(str, "(") == countOcuurance(str, ")") ) return 1;  
+    return 0;   
+}
+   
+BracketMatcher("(hello (world)))");
+console.log(BracketMatcher("(hello (world))()"));
+
+</script>
+
+
+</html>
+
+
+

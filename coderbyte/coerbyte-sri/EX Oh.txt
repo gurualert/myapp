@@ -1,0 +1,44 @@
+function ExOh(str) { 
+  var newStr = str.toLocaleLowerCase();
+  var arr = newStr.split("");
+  var xCount = 0;
+  var oCount = 0;
+  for(var i=0; i<arr.length; i++){
+    if(arr[i]=="x"){
+      xCount++;
+    }
+    if(arr[i]=="o"){
+      oCount++;
+    }
+  }
+  
+  if(xCount == oCount){
+   return true
+  }
+  // code goes here  
+  return false; 
+         
+}
+   
+// keep this function call here 
+// to see how to enter arguments in JavaScript scroll down
+ExOh(readline());                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
+                            
+                            
+  

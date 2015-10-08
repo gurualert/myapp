@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>RunLength</title>
+	
+</head>
+<body>
+
+
+</body>
+<script type="text/javascript">
+
+var temp=[];
+function RunLength(str) {
+   var cnt = 1;
+   var temp = "";
+   var tempStr = "";
+   for(var i=0; i<str.length; i++) {
+       if(str.charAt(i) == str.charAt(i+1)) {
+           cnt++;
+           
+       } else {
+           tempStr = tempStr + cnt + str.charAt(i);
+           cnt = 1;
+       }
+   }
+   console.log("tempStr: "+tempStr);
+   return temp;
+}
+
+RunLength("aabbcde");
+
+RunLength("aaabbbbcdee");
+
+</script>
+
+
+</html>
+
+
+

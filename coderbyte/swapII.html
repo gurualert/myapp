@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>SwapII</title>
+	
+</head>
+<body>
+
+
+</body>
+<script type="text/javascript">
+
+
+function SwapII(str) { 
+var result=str;
+var tempArr=[];
+
+  for(var i=0; i<str.length; i++) {
+	
+    if(isNaN(str.charAt(i))) {
+	//console.log('str:chatAt '+str.charAt(i));
+	//console.log('str:chatAt '+str.charAt(i).toUpperCase());
+	if(str.charAt(i) == str.charAt(i).toLowerCase()) {
+		result = result.slice(0, i) + result.charAt(i).toUpperCase() + result.slice(i+1, str.length);
+	} else if(str.charAt(i) == str.charAt(i).toUpperCase()){
+		result = result.slice(0, i) + result.charAt(i).toLowerCase() + result.slice(i+1, str.length);
+	}
+	//console.log(result);
+    } else {
+		//console.log(typeof(str.charAt(i-1)));
+			if(str.charAt(i)!=" ") {
+				tempArr.push(i);
+			}
+	}
+  }
+ 
+  //console.log('result: '+result);
+  //console.log('tempArr: '+tempArr);
+  result = swapIntegers(result, tempArr); 
+  console.log('result :: '+result);
+  return result; 
+}
+
+function swapIntegers(result, tempArr) {
+   for(var i=1; i<tempArr.length; i++) {
+	  if( result.charAt(tempArr[(i-1)*2]- 1) !=" " && result.charAt(tempArr[(i-1)*2]+ 1) !=" " && result.charAt(tempArr[(i*2-1)]-1) !=" " && result.charAt(tempArr[(i*2-1)]+1) !=" " ) {
+			
+			if(tempArr[(i-1)*2]!=undefined && tempArr[i*2-1]!=undefined) {				
+				var a = result.charAt(tempArr[(i-1)*2]);
+				var b = result.charAt(tempArr[i*2-1]);
+				result = result.slice(0, tempArr[(i-1)*2]) + b + result.slice((tempArr[(i-1)*2])+1, result.length);
+				result = result.slice(0, tempArr[i*2-1]) + a + result.slice((tempArr[i*2-1])+1, result.length);
+				//console.log('result: '+result);
+			}
+	  }
+   }
+   //console.log('result: '+result);
+   return result;
+}
+
+SwapII("Hello -5LOL6");
+SwapII("2s6 D U4D5E");
+
+</script>
+
+
+</html>

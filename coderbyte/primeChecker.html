@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>primeChecker</title>
+	
+</head>
+<body>
+
+
+</body>
+<script type="text/javascript">
+
+
+function primeChecker(n) {
+
+   var tempArr = String(n).split("");
+   var collection = [];
+   for(var i=0; i<tempArr.length; i++) {
+       collection.push(tempArr[i]);
+       for(var j=0; j<tempArr.length; j++) {
+          var combination = tempArr[i]+""+tempArr[j];
+          collection.push(combination);
+       }
+   }
+   console.log("collection: "+collection);
+   console.log("collection: "+collection.length);
+}
+
+primeChecker(129)
+
+</script>
+
+
+</html>
+
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>PrimeTime</title>
+	
+</head>
+<body>
+
+
+</body>
+<script type="text/javascript">
+
+
+function PrimeTime(n) {
+
+   if (n < 2) {return true}
+   if (n != Math.round(n)) {return true}
+
+   // Now assume that n is prime, we will try to prove that it is not.
+   var isPrime = true;
+
+   // Now check every whole number from 2 to the square root of n. If any of these divides n exactly, n cannot be prime.
+   for (var i = 2; i<=n/2; ++i) {
+      if (n % i == 0) {isPrime = false; break;}
+   }
+
+   // Finally return whether n is prime or not.
+   console.log("isPrime: "+isPrime);
+   return isPrime;
+
+}
+PrimeTime(29)
+//console.log(PrimeTime(61));
+
+</script>
+
+
+</html>
+
+
+

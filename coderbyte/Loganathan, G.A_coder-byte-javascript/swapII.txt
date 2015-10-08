@@ -1,0 +1,36 @@
+function SwapII(str) { 
+  var tempArr=[];
+  for(var i=0; i<str.length; i++) {
+    if(isNaN(str.charAt(i))) {
+	if(str.charAt(i) == str.charAt(i).toLowerCase()) {
+		str = str.slice(0, i) + str.charAt(i).toUpperCase() + str.slice(i+1, str.length);
+	} else if(str.charAt(i) == str.charAt(i).toUpperCase()){
+		str = str.slice(0, i) + str.charAt(i).toLowerCase() + str.slice(i+1, str.length);
+	}
+    } else {
+		if(str.charAt(i)!=" ") {
+			tempArr.push(i);
+		}
+	}
+  }
+  str = swapIntegers(str, tempArr); 
+  //console.log('str :: '+str);
+  return str; 
+}
+
+function swapIntegers(str, tempArr) {
+   for(var i=1; i<tempArr.length; i++) {
+	  if( str.charAt(tempArr[(i-1)*2]- 1) !=" " && str.charAt(tempArr[(i-1)*2]+ 1) !=" " && str.charAt(tempArr[(i*2-1)]-1) !=" " && str.charAt(tempArr[(i*2-1)]+1) !=" " ) {
+			if(tempArr[(i-1)*2]!=undefined && tempArr[i*2-1]!=undefined) {				
+				var a = str.charAt(tempArr[(i-1)*2]);
+				var b = str.charAt(tempArr[i*2-1]);
+				str = str.slice(0, tempArr[(i-1)*2]) + b + str.slice((tempArr[(i-1)*2])+1, str.length);
+				str = str.slice(0, tempArr[i*2-1]) + a + str.slice((tempArr[i*2-1])+1, str.length);
+			}
+	  }
+   }
+   //console.log('str: '+str);
+   return str;
+}
+
+SwapII(readline()); 

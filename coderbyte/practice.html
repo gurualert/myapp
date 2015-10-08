@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>Js Practice</title>
+	
+</head>
+<body>
+
+
+</body>
+<script type="text/javascript">
+
+
+/* returns the size/length of an object */
+
+Object.size = function(obj) {
+	var size = 0;
+	for(key in obj) {
+		if(obj.hasOwnProperty(key)) size++;
+	}
+	return size;
+}
+
+//initial vars
+var str = 'hellodavidthisisatestofobjectusage';
+var letters = new Object;
+
+//loop, figure it out
+for(x = 0, length = str.length; x < length; x++) {
+	var l = str.charAt(x);
+        //console.log('l: '+l);
+	if(l=="t") {
+	    letters[l] = (isNaN(letters[l]) ? 1 : letters[l] + 1);
+	}
+}
+
+//output count!
+for(key in letters) {
+	console.log(key + ' :: ' + letters[key]);
+
+
+}
+//console.log(Object.size(letters));
+
+
+/*var str = "This is the way I walk my dog";
+
+  var num_matches = str.match(/")"/gi).length;
+
+  alert(num_matches);*/
+function countOcuurance(str, char) {
+	for(x = 0, length = str.length; x < length; x++) {
+	var l = str.charAt(x);
+        //console.log('l: '+l);
+	if(l=="t") {
+	    letters[l] = (isNaN(letters[l]) ? 1 : letters[l] + 1);
+	}
+}
+
+for(key in letters) {
+	console.log(key + ' :: ' + letters[key]);
+
+
+}
+}
+
+
+function BracketMatcher(str) { 
+  if( countOcuurance(str, "(") == countOcuurance(str, ")") ) return 1;  
+  return 0; 
+         
+}
+   
+BracketMatcher("(hello (world))");
+
+//------------------------------
+function SimpleSymbols(str) { 
+
+  var temp = str.split('');
+  for(var i=1; i<temp.length; i++) {
+    console.log('one: '+(i*2 - 1));
+    //console.log('two: '+((i-1) *2));	
+  }
+}
+SimpleSymbols("+d+=3=+s+");
+
+
+
+function PalindromeTwo(str) { 
+
+  
+  str = str.split("-").join("");
+
+  var temp = str.split(" ").join("").toLowerCase();
+
+temp = temp.split("");
+
+
+  var len = temp.length / 2;
+//alert(len);
+
+  var cnt=0;
+  for(var i=0, j=temp.length-1; i<=len && j>=len; i++, j--) {
+
+    if(temp[i]==temp[j]) {
+      cnt++;
+    }
+  }
+
+  if(cnt==len) {
+alert("true");
+  return true; 
+  } else {
+    return false;
+  }
+         
+}
+   
+// keep this function call here 
+// to see how to enter arguments in JavaScript scroll down
+PalindromeTwo("A war at Taraw");  
+
+//----------------------
+
+function StringScramble(str1,str2) { 
+  for(var i=str2.length; i>=0; i--) {
+     for(var j=str1.length; j>=0; j--) {
+        if(str2.charAt(i)==str1.charAt(j)) {
+           //if(str2.length>1) {
+              str2 = str2.slice(0, i) + str2.slice(i+1, str2.length);
+              str1 = str1.slice(0, j) + str1.slice(j+1, str1.length);
+           /*} else {
+              str2 = str2.slice(0, i);
+              str1 = str1.slice(0, j);
+           }*/
+           if(str2.length==0) {
+              return true;
+           }
+        }
+
+     }
+  }  
+
+  return false;
+         
+}
+//----------------------
+
+</script>
+
+
+</html>
+
+
+

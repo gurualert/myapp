@@ -1,0 +1,17 @@
+function countOcuurance(str, char) {
+    var letters = [];
+    for(x = 0, length = str.length; x < length; x++) {
+	    if(str.charAt(x)==char) {
+            letters.push(str.charAt(x));
+	    }
+    }
+    //console.log(letters.length);
+    return letters.length;
+}
+
+function BracketMatcher(str) { 
+    if( countOcuurance(str, "(") == countOcuurance(str, ")") ) return 1;  
+    return 0;   
+}
+   
+BracketMatcher(readline());

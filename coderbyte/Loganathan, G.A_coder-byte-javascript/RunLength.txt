@@ -1,0 +1,16 @@
+function RunLength(str) {
+   var cnt = 1;
+   var tempStr = "";
+   for(var i=0; i<str.length; i++) {
+       if(str.charAt(i) == str.charAt(i+1)) {
+           cnt++;
+       } else {
+           tempStr = tempStr + cnt + str.charAt(i);
+           cnt = 1;
+       }
+   }
+   //console.log("tempStr: "+tempStr);
+   return tempStr;
+}
+
+RunLength(readline());  

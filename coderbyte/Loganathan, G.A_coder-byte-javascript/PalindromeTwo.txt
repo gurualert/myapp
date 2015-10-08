@@ -1,0 +1,25 @@
+function PalindromeTwo(str) { 
+  str = str.split("-").join("");
+  str = str.split("!").join("");
+  
+  var temp = str.split(" ").join("").toLowerCase();
+  temp = temp.split("");
+
+  var len = temp.length / 2;
+  var cnt=0;
+  
+  for(var i=0, j=temp.length-1; i<=len && j>=len; i++, j--) {
+      if(temp[i]==temp[j]) {
+          cnt++;
+      }
+  }
+
+  if(cnt==len) {
+      return true; 
+  } else {
+      return false;
+  }
+         
+}
+
+PalindromeTwo(readline());    

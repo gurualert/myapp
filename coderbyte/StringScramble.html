@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>StringScramble</title>
+	
+</head>
+<body>
+
+
+</body>
+<script type="text/javascript">
+
+
+function StringScramble(str1,str2) { 
+  for(var i=str2.length; i>=0; i--) {
+     for(var j=str1.length; j>=0; j--) {
+        if(str2.charAt(i)==str1.charAt(j)) {
+
+           str2 = str2.slice(0, i) + str2.slice(i+1, str2.length);
+           str1 = str1.slice(0, j) + str1.slice(j+1, str1.length);
+
+           if(str2.length==0) {
+              return true;
+           }
+        }
+     }
+  }  
+
+  return false;
+         
+}
+   
+
+console.log(StringScramble("cdore & zstr2=z", "coderzz"));  
+
+console.log(StringScramble("h3llko", "hello"));
+</script>
+
+
+</html>
+
+
+
